@@ -1,0 +1,60 @@
+<div id="navbar" class="navbar navbar-dark">
+  <div class="navbar-brand">
+    <a [routerLink] = "['/']">
+        <h1>AgriLab</h1>
+    </a>
+  </div>
+</div>
+
+
+<div class="container-fluid" id="dashboard-display">
+  <div class="row">
+    <div class="col-sm-12 ml-sm-auto" id="dashboard">
+
+      <div class="section-container">
+        <div class="cards row-fluid">
+          <div class="card-deck">
+            <div class="card mb-3 shadow card-theme">
+              <div class="card-header card-header-theme">
+                  <h5>System health</h5>
+              </div>
+              <div class="card-body text-center">
+                  <app-switch></app-switch>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="section-container">
+        <div class="cards row-fluid">
+          <div class="card-deck">
+
+            <div class="card mb-3 shadow card-theme">
+              <div class="card-header card-header-theme">
+                <h5>Node 1 Temperature</h5>
+              </div>
+              <div class="card-body">
+                <app-node1-temp></app-node1-temp>
+              </div>
+            </div>
+
+            <div class="card mb-3 shadow card-theme">
+              <div class="card-header card-header-theme">
+                <h5>Node 1 Humidity</h5>
+              </div>
+              <div class="card-body">
+                <app-node1-hum></app-node1-hum>
+              </div>
+            </div>
+
+            </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

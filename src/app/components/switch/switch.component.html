@@ -1,0 +1,6 @@
+<label for='check' id="label">
+  <input type="checkbox" id='check' class='check' checked *ngIf = "isOnline == 1 " (click)="handleClickEventForOnInitialState()"/>
+  <input type="checkbox" id='check' class='check' *ngIf = "isOnline == 0 " (click)="handleClickEventForOffInitialState()"/>
+  <span class="button"></span>
+  <p class="text-center">Heater Switch</p>
+</label>

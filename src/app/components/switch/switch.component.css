@@ -1,0 +1,70 @@
+#label
+{
+  position: relative;
+  /* left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) */
+  /* top: 100px; */
+}
+
+.check
+{
+display:none;
+}
+.button
+{
+  display: inline-block;
+  /* background-color: #333; */
+  background-color: #F89406;
+  height: 60px;
+  width: 120px;
+  border-radius: 50px;
+  transition: background 0.5s ease;
+}
+.button::before
+{
+  content:"";
+  background-color: #fff !important;
+  position:absolute;
+  height: 50px;
+  width:  50px;
+  background: #aaa;
+  top: 5px;
+  left: 5px;
+  border-radius:40px;
+  transition: background 0.5s ease, left 0.5s ease;
+  /*
+  The last property can be replaced by:
+  transition: all 0.5s ease;
+  
+  */
+}
+.button::after
+{
+  content:"off";
+  position:absolute;
+  height: 50px;
+  width:  50px;
+  top:5px;
+  text-align:center;
+  line-height:50px;
+  text-transform:uppercase;
+  left:65px;
+  color:white;
+    transition: left 0.5s ease;
+}
+.check:checked + .button
+{
+  /* background: #b1b1b1; */
+  background-color: #51A351;
+}
+.check:checked + .button::before
+{
+  background: #0283fc;
+  left: 65px;
+}
+.check:checked + .button::after
+{
+  left:5px;
+  content:"on";
+}

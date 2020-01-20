@@ -1,0 +1,23 @@
+.navbar-brand a{
+    color: #f7fff7;
+    display: block;
+    text-align: center !important;
+}
+.navbar-brand h1 {
+    font-size: 2rem;
+}
+.navbar-brand img {
+    height: 50px;
+    width: 50px;
+}
+#navbar {
+    background-color: #161a1e !important;
+}
+
+#dashboad-display {
+    margin: 5rem 0 0;
+}
+
+#dashboard {
+    height: 100vh;
+}
