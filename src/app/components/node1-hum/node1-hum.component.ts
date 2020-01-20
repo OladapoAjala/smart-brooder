@@ -52,7 +52,7 @@ export class Node1HumComponent implements OnInit {
   client;
 
   constructor(private toast: ToastrService) { 
-    this.client = new Paho.MQTT.Client('broker.hivemq.com', 8000, 'njkwnekdn');
+    this.client = new Paho.MQTT.Client('test.mosquitto.org', 8081, 'njkwnekdn');
   }
 
   ngOnInit() {
@@ -62,7 +62,10 @@ export class Node1HumComponent implements OnInit {
     this.dataSource.chart.caption = this.dataSource.dials.dial[0].value + " " + this.dataSource.chart.numberSuffix;
     this.onConnectionLost();
 
-    this.client.connect({onSuccess: this.onConnected.bind(this)});
+    this.client.connect({
+      onSuccess: this.onConnected.bind(this),
+      useSSL: true
+    });
   }
 
 
@@ -93,8 +96,8 @@ export class Node1HumComponent implements OnInit {
   // // Log something when the connection is lost
   onConnectionLost() {
     this.client.onConnectionLost = (responseObject: Object) => {
-      // console.log('Connection lost : ' + JSON.stringify(responseObject));
-      this.toast.warning('Humidity Sensor is now offline')
+    // console.log('Connection lost : ' + JSON.stringify(responseObject));
+    this.toast.warning('Humidity Sensor is now offline')
     };
   }
 }

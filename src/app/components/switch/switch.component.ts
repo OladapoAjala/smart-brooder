@@ -19,7 +19,7 @@ export class SwitchComponent implements OnInit {
 
   constructor(private toast: ToastrService) {
       // Initialise the Mqtt client
-      this.client = new Paho.MQTT.Client('broker.hivemq.com', 8000, 'jbjhbdhj');
+      this.client = new Paho.MQTT.Client('test.mosquitto.org', 8081, 'jbjhbdhj');
    }
 
   ngOnInit() {
@@ -27,7 +27,10 @@ export class SwitchComponent implements OnInit {
     // call back handler for when a connection is lost
     this.onConnectionLost();
 
-    this.client.connect({onSuccess: this.onConnected.bind(this)});
+    this.client.connect({
+      onSuccess: this.onConnected.bind(this),
+      useSSL: true
+    });
   }
 
   // when a client connects, make a subscription '123456' and send a message using the sendMessage method

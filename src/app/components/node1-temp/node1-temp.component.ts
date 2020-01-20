@@ -35,7 +35,7 @@ export class Node1TempComponent implements OnInit {
 
   constructor(private toast: ToastrService) {
     //  Initialise the Mqtt client
-    this.client = new Paho.MQTT.Client('broker.hivemq.com', 8000, 'bbdwbbdw');
+    this.client = new Paho.MQTT.Client('test.mosquitto.org', 8081, 'bbdwbbdw');
    }
 
   ngOnInit() {
@@ -43,7 +43,11 @@ export class Node1TempComponent implements OnInit {
     this.dataSource.chart.caption = this.dataSource.value + " " + this.dataSource.chart.numbersuffix;
     // call back handler for when a connection is lost
     this.onConnectionLost();
-    this.client.connect({onSuccess: this.onConnected.bind(this)});
+    
+    this.client.connect({
+      onSuccess: this.onConnected.bind(this),
+      useSSL: true
+    });
   }
 
    // when a client connects, make a subscription '123456' and send a message using the sendMessage method
