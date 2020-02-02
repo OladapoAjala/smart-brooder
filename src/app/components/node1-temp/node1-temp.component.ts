@@ -52,7 +52,7 @@ export class Node1TempComponent implements OnInit {
 
    // when a client connects, make a subscription '123456' and send a message using the sendMessage method
    onConnected() {
-    this.toast.success('Temperature Sensor is now online');
+    this.toast.success('Temperature Sensor 1 is now online');
     this.client.subscribe("/agrilab/node1/temperature");
   }
 
@@ -77,7 +77,7 @@ export class Node1TempComponent implements OnInit {
   onConnectionLost() {
     this.client.onConnectionLost = (responseObject: Object) => {
       // console.log('Connection lost : ' + JSON.stringify(responseObject));
-      this.toast.warning('Temperature Sensor is now offline')
+      this.toast.warning('Temperature Sensor 1 is now offline')
     };
   }
 

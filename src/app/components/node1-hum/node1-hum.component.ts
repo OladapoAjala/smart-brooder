@@ -72,7 +72,7 @@ export class Node1HumComponent implements OnInit {
   // when a client connects, make a subscription '123456' and send a message using the sendMessage method
   onConnected() {
     console.log("Connected");
-    this.toast.success('Humidity Sensor is now online');
+    this.toast.success('Humidity Sensor 1 is now online');
     this.client.subscribe("/agrilab/node1/humidity");
   }
 
@@ -97,7 +97,7 @@ export class Node1HumComponent implements OnInit {
   onConnectionLost() {
     this.client.onConnectionLost = (responseObject: Object) => {
     // console.log('Connection lost : ' + JSON.stringify(responseObject));
-    this.toast.warning('Humidity Sensor is now offline')
+    this.toast.warning('Humidity Sensor 1 is now offline')
     };
   }
 }
