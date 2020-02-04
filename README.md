@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
+WIP
+
+This is an IoT based project that helps farmers monitor and control farm equipment remotely.
+
+Collabrated with @OladapoAjala.
+
+http://smart-brooder.web.app/
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
